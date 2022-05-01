@@ -1,7 +1,5 @@
-:motor_right.py
 #!/usr/vin/env python
 # -*- coding: utf-8 -*-
-
 import RPi.GPIO as GPIO 
 import rospy, time
 from std_msgs.msg import Int64
@@ -11,23 +9,20 @@ class motor_command():
         self.RotationDirect = True # Forward
         self.Stop = False          # Forward
         self.Enable = True
-        self.pin_num_PWM = 18      # pin name
+        self.pin_num_PWM = 18      # pin
         self.pin_num_RotatetionDirect = 15
         self.pin_num_Enable = 14
         self.pin_num_Stop = 23
-        self.freq = 50              # Hz (PWM のパルスを一秒間に 50 個生成)
-        #ノード立ち上げ（ROS）
+        self.freq = 50              # Hz(generate 50 PWM pulse in a second)
         rospy.init_node('maxon_test')
         rospy.Subscriber('right_motor/cmd_vel', Int64, self.callback)
         rospy.loginfo('Ready to receive motor command')
-
         GPIO.setmode(GPIO.BCM) # inicialize GPIO
         # setup for GPIL. set GPIO to desital output
         GPIO.setup(self.pin_num_PWM, GPIO.OUT)
         GPIO.setup(self.pin_num_RotatetionDirect, GPIO.OUT)
         GPIO.setup(self.pin_num_Enable, GPIO.OUT)
         GPIO.setup(self.pin_num_Stop, GPIO.OUT)
-
         GPIO.output(self.pin_num_RotatetionDirect,GPIO.LOW)
         GPIO.output(self.pin_num_Enable, GPIO.LOW)
         GPIO.output(self.pin_num_Stop, GPIO.HIGH)
@@ -99,9 +94,7 @@ class motor_command():
             duty = -90
         return duty
 
-if __name__ == '__main__': #これがメイン実行file
+if __name__ == '__main__':
     Motor_Command = motor_command()
     Motor_Command.motor_main()
-        #pubする場合の参考
-        #rostopic pub right_motor/cmd_vel std_msgs/Int64 "data: 10
-
+     
