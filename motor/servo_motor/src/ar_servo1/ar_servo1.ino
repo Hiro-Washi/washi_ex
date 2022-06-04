@@ -9,13 +9,12 @@
 #include <std_msgs/UInt16.h>
 ros::NodeHandle nh;
 Servo servo;
-
-void servo_cb(const std_msgs::UInt16& cmd_msg){
+void servoCB(const std_msgs::UInt16& cmd_msg){
     servo.write(cmd_msg.data);
     digitalWrite(13, HIGH-digitalRead(13));
 }
 
-ros::Subscriber<std_msgs::UInt16> sub("servo", servo_cb);
+ros::Subscriber<std_msgs::UInt16> sub("servo", servoCB);
 
 void setup(){
     pinMode(13, OUTPUT);

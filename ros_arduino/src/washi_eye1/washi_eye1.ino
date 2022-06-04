@@ -1,91 +1,76 @@
 #include <ros.h>
-#include <std_msgs/Empty.h>
-
 #include <std_msgs/String.h>
-
+#include <std_msgs/Bool.h>
 #include <Adafruit_GFX.h>
 #include <Adafruit_ST7735.h>
 #include <SPI.h>
-
-#define TFT_CS     6
 #define TFT_RST    5
-#define TFT_DC     7
+#define TFT_DC     6
+#define TFT_CS     7
 #define TFT_SCLK 13
 #define TFT_MOSI 11
-
 #define display_width 160
 #define display_height 80
-
 Adafruit_ST7735 tft = Adafruit_ST7735(TFT_CS,  TFT_DC, TFT_RST);
-
-int display_pixel_x, display_pixel_y,Offset_pixel=40;
-int16_t max_result;
-float pi = 3.145926;
-int speed = 9600;
+int display_pixel_x, display_pixel_y, Offset_pixel = 2;
 
 ros::NodeHandle nh;
+#define ROS_INFO_STREAM
 
-void CallBack(const std_msgs::Empty& blink_msg) {
-    text("^ ▽ ^", YELLOW);
-    delay(100);
+// after receive chatter
+void arduinoCB( const std_msgs::String& eye_topic) {
+  ROS_INFO_STREAM(eye_topic.data);
+
+  if (eye_topic.data == "true") {
+    Emoji("(^▽^)", ST7735_YELLOW);
+  }
+  else if (eye_topic.data == "false") {
+    Emoji("x o x", ST7735_BLUE);
+  }
+  else {
+    void(0); //pass
+  }
+  delay(3000);
+  tft.fillScreen(ST7735_BLACK);
 }
 
-ros::Subscriber<std_msgs::Empty> s("blink_msg", CallBack );
+ros::Subscriber<std_msgs::String> sub("eye_topic", &arduinoCB );
 
 void setup(void) {
-    nh.initNode();
-    nh.advertise("chatter", &) /////
-    
-    Serial.begin(speed);
-    tft.initR(INITR_MINI160x80);
-    //tft.setRotation(3);
-    tft.fillScreen(ST7735_BLACK);
-    
-    testdrawtext("( o  _  o )", ST7735_WHITE);
-    delay(1000);
-    
-    tftPrintTest();
-    delay(4000);
-    tft.drawPixel(tft.width()/2, tft.height()/2, ST7735_GREEN);
-    delay(500);
-    testlines(ST7735_YELLOW);
-    delay(500);
-    testfastlines(ST7735_RED, ST7735_BLUE);
-    delay(500);
-    testdrawrects(ST7735_GREEN);
-    delay(500);
-    testfillrects(ST7735_YELLOW, ST7735_MAGENTA);
-    delay(500);
-    tft.fillScreen(ST7735_BLACK);
-    testfillcircles(10, ST7735_BLUE);
-    testdrawcircles(10, ST7735_WHITE);
-    delay(500);
-    testroundrects();
-    delay(500);
-    testtriangles();
-    delay(500);
-    mediabuttons();
-    delay(500);
-    Serial.println("done");
-    delay(1000);
-    
-    tft.setTextSize(4);
-    tft.print("ST7735");
-    delay(500);
-    }
+  nh.initNode();
+  nh.subscribe(sub);
+
+  Serial.begin(9600);
+  tft.initR(INITR_MINI160x80);
+  Serial.println(F("Initialized"));
+  tft.setRotation(3);
+  tft.fillScreen(ST7735_BLACK);
+
+  tft.setTextSize(3);
+  tft.setCursor(15, 15);
+  tft.setTextColor(ST7735_BLUE);
+  tft.print("SUTA-TO!");
+  delay(2000);
+
+  tft.fillScreen(ST7735_BLACK);
+}
 
 void loop(void) {
-    tft.text("( o  _  o )")
-    Serial.printin("Waiting for message...")
-    deley(500)
+  Serial.print("Waiting for message...");
+  tft.fillScreen(ST7735_WHITE);
+  Emoji("(^O^)", ST7735_GREEN);
+  delay(1000);
+  tft.fillScreen(ST7735_MAGENTA);
+  Emoji("(x_x)", ST7735_BLUE);
+  delay(1000);
+  tft.fillScreen(ST7735_BLACK);  
+  nh.spinOnce();
 }
 
-void Emoji(char *text, unit16_t *color) {
-    tft.setCursor(0, 0);
-    tft.setTextSize(8);
-    tft.setColor(color);
-    tft.setTextWrap(true);
-    tft.print();
+void Emoji(char *text, int16_t *color) {
+  tft.setCursor(5, 15);
+  tft.setTextSize(5);
+  tft.setTextColor(color);
+  tft.setTextWrap(true); //行を折り返す
+  tft.print(text);
 }
-
-int16_t MaxUpdate(int16_t)

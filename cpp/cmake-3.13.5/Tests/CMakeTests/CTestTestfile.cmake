@@ -1,0 +1,37 @@
+# CMake generated Testfile for 
+# Source directory: /home/hiroto/@home_ws/src/washi_ex/cpp/cmake-3.13.5/Tests/CMakeTests
+# Build directory: /home/hiroto/@home_ws/src/washi_ex/cpp/cmake-3.13.5/Tests/CMakeTests
+# 
+# This file includes the relevant testing commands required for 
+# testing this directory and lists subdirectories to be tested as well.
+add_test(CMake.List "/home/hiroto/@home_ws/src/washi_ex/cpp/cmake-3.13.5/bin/cmake" "-P" "/home/hiroto/@home_ws/src/washi_ex/cpp/cmake-3.13.5/Tests/CMakeTests/ListTest.cmake")
+add_test(CMake.VariableWatch "/home/hiroto/@home_ws/src/washi_ex/cpp/cmake-3.13.5/bin/cmake" "-P" "/home/hiroto/@home_ws/src/washi_ex/cpp/cmake-3.13.5/Tests/CMakeTests/VariableWatchTest.cmake")
+add_test(CMake.Include "/home/hiroto/@home_ws/src/washi_ex/cpp/cmake-3.13.5/bin/cmake" "-P" "/home/hiroto/@home_ws/src/washi_ex/cpp/cmake-3.13.5/Tests/CMakeTests/IncludeTest.cmake")
+add_test(CMake.FindBase "/home/hiroto/@home_ws/src/washi_ex/cpp/cmake-3.13.5/bin/cmake" "-P" "/home/hiroto/@home_ws/src/washi_ex/cpp/cmake-3.13.5/Tests/CMakeTests/FindBaseTest.cmake")
+add_test(CMake.Toolchain "/home/hiroto/@home_ws/src/washi_ex/cpp/cmake-3.13.5/bin/cmake" "-P" "/home/hiroto/@home_ws/src/washi_ex/cpp/cmake-3.13.5/Tests/CMakeTests/ToolchainTest.cmake")
+add_test(CMake.GetFilenameComponentRealpath "/home/hiroto/@home_ws/src/washi_ex/cpp/cmake-3.13.5/bin/cmake" "-P" "/home/hiroto/@home_ws/src/washi_ex/cpp/cmake-3.13.5/Tests/CMakeTests/GetFilenameComponentRealpathTest.cmake")
+add_test(CMake.Version "/home/hiroto/@home_ws/src/washi_ex/cpp/cmake-3.13.5/bin/cmake" "-P" "/home/hiroto/@home_ws/src/washi_ex/cpp/cmake-3.13.5/Tests/CMakeTests/VersionTest.cmake")
+add_test(CMake.Message "/home/hiroto/@home_ws/src/washi_ex/cpp/cmake-3.13.5/bin/cmake" "-P" "/home/hiroto/@home_ws/src/washi_ex/cpp/cmake-3.13.5/Tests/CMakeTests/MessageTest.cmake")
+add_test(CMake.File "/home/hiroto/@home_ws/src/washi_ex/cpp/cmake-3.13.5/bin/cmake" "-P" "/home/hiroto/@home_ws/src/washi_ex/cpp/cmake-3.13.5/Tests/CMakeTests/FileTest.cmake")
+add_test(CMake.ImplicitLinkInfo "/home/hiroto/@home_ws/src/washi_ex/cpp/cmake-3.13.5/bin/cmake" "-P" "/home/hiroto/@home_ws/src/washi_ex/cpp/cmake-3.13.5/Tests/CMakeTests/ImplicitLinkInfoTest.cmake")
+add_test(CMake.ModuleNotices "/home/hiroto/@home_ws/src/washi_ex/cpp/cmake-3.13.5/bin/cmake" "-P" "/home/hiroto/@home_ws/src/washi_ex/cpp/cmake-3.13.5/Tests/CMakeTests/ModuleNoticesTest.cmake")
+add_test(CMake.GetProperty "/home/hiroto/@home_ws/src/washi_ex/cpp/cmake-3.13.5/bin/cmake" "-P" "/home/hiroto/@home_ws/src/washi_ex/cpp/cmake-3.13.5/Tests/CMakeTests/GetPropertyTest.cmake")
+add_test(CMake.If "/home/hiroto/@home_ws/src/washi_ex/cpp/cmake-3.13.5/bin/cmake" "-P" "/home/hiroto/@home_ws/src/washi_ex/cpp/cmake-3.13.5/Tests/CMakeTests/IfTest.cmake")
+add_test(CMake.String "/home/hiroto/@home_ws/src/washi_ex/cpp/cmake-3.13.5/bin/cmake" "-P" "/home/hiroto/@home_ws/src/washi_ex/cpp/cmake-3.13.5/Tests/CMakeTests/StringTest.cmake")
+add_test(CMake.Math "/home/hiroto/@home_ws/src/washi_ex/cpp/cmake-3.13.5/bin/cmake" "-P" "/home/hiroto/@home_ws/src/washi_ex/cpp/cmake-3.13.5/Tests/CMakeTests/MathTest.cmake")
+add_test(CMake.CMakeMinimumRequired "/home/hiroto/@home_ws/src/washi_ex/cpp/cmake-3.13.5/bin/cmake" "-P" "/home/hiroto/@home_ws/src/washi_ex/cpp/cmake-3.13.5/Tests/CMakeTests/CMakeMinimumRequiredTest.cmake")
+add_test(CMake.CompilerIdVendor "/home/hiroto/@home_ws/src/washi_ex/cpp/cmake-3.13.5/bin/cmake" "-P" "/home/hiroto/@home_ws/src/washi_ex/cpp/cmake-3.13.5/Tests/CMakeTests/CompilerIdVendorTest.cmake")
+add_test(CMake.ProcessorCount "/home/hiroto/@home_ws/src/washi_ex/cpp/cmake-3.13.5/bin/cmake" "-DKWSYS_TEST_EXE=/home/hiroto/@home_ws/src/washi_ex/cpp/cmake-3.13.5/Source/kwsys/cmsysTestsCxx" "-P" "/home/hiroto/@home_ws/src/washi_ex/cpp/cmake-3.13.5/Tests/CMakeTests/ProcessorCountTest.cmake")
+add_test(CMake.PushCheckState "/home/hiroto/@home_ws/src/washi_ex/cpp/cmake-3.13.5/bin/cmake" "-P" "/home/hiroto/@home_ws/src/washi_ex/cpp/cmake-3.13.5/Tests/CMakeTests/PushCheckStateTest.cmake")
+add_test(CMake.While "/home/hiroto/@home_ws/src/washi_ex/cpp/cmake-3.13.5/bin/cmake" "-P" "/home/hiroto/@home_ws/src/washi_ex/cpp/cmake-3.13.5/Tests/CMakeTests/WhileTest.cmake")
+add_test(CMake.CMakeHostSystemInformation "/home/hiroto/@home_ws/src/washi_ex/cpp/cmake-3.13.5/bin/cmake" "-P" "/home/hiroto/@home_ws/src/washi_ex/cpp/cmake-3.13.5/Tests/CMakeTests/CMakeHostSystemInformationTest.cmake")
+add_test(CMake.FileDownload "/home/hiroto/@home_ws/src/washi_ex/cpp/cmake-3.13.5/bin/cmake" "-P" "/home/hiroto/@home_ws/src/washi_ex/cpp/cmake-3.13.5/Tests/CMakeTests/FileDownloadTest.cmake")
+set_tests_properties(CMake.FileDownload PROPERTIES  PASS_REGULAR_EXPRESSION "file already exists with expected MD5 sum")
+add_test(CMake.FileDownloadBadHash "/home/hiroto/@home_ws/src/washi_ex/cpp/cmake-3.13.5/bin/cmake" "-P" "/home/hiroto/@home_ws/src/washi_ex/cpp/cmake-3.13.5/Tests/CMakeTests/FileDownloadBadHashTest.cmake")
+set_tests_properties(CMake.FileDownloadBadHash PROPERTIES  WILL_FAIL "TRUE")
+add_test(CMake.FileUpload "/home/hiroto/@home_ws/src/washi_ex/cpp/cmake-3.13.5/bin/cmake" "-P" "/home/hiroto/@home_ws/src/washi_ex/cpp/cmake-3.13.5/Tests/CMakeTests/FileUploadTest.cmake")
+add_test(CMake.ELF "/home/hiroto/@home_ws/src/washi_ex/cpp/cmake-3.13.5/bin/cmake" "-P" "/home/hiroto/@home_ws/src/washi_ex/cpp/cmake-3.13.5/Tests/CMakeTests/ELFTest.cmake")
+add_test(CMake.EndStuff "/home/hiroto/@home_ws/src/washi_ex/cpp/cmake-3.13.5/bin/cmake" "-Ddir:STRING=/home/hiroto/@home_ws/src/washi_ex/cpp/cmake-3.13.5/Tests/CMakeTests/EndStuffTest" "-P" "/home/hiroto/@home_ws/src/washi_ex/cpp/cmake-3.13.5/Tests/CMakeTests/EndStuffTest.cmake")
+add_test(CMake.GetPrerequisites "/home/hiroto/@home_ws/src/washi_ex/cpp/cmake-3.13.5/bin/cmake" "-DConfiguration:STRING=" "-P" "/home/hiroto/@home_ws/src/washi_ex/cpp/cmake-3.13.5/Tests/CMakeTests/GetPrerequisitesTest.cmake")
+add_test(CMake.PolicyCheck "/home/hiroto/@home_ws/src/washi_ex/cpp/cmake-3.13.5/bin/cmake" "-DCMake_BINARY_DIR:PATH=/home/hiroto/@home_ws/src/washi_ex/cpp/cmake-3.13.5" "-DCMake_SOURCE_DIR:PATH=/home/hiroto/@home_ws/src/washi_ex/cpp/cmake-3.13.5" "-DGIT_EXECUTABLE:STRING=/usr/bin/git" "-P" "/home/hiroto/@home_ws/src/washi_ex/cpp/cmake-3.13.5/Tests/CMakeTests/PolicyCheckTest.cmake")
+add_test(CMake.CheckSourceTree "/home/hiroto/@home_ws/src/washi_ex/cpp/cmake-3.13.5/bin/cmake" "-DCMake_BINARY_DIR:PATH=/home/hiroto/@home_ws/src/washi_ex/cpp/cmake-3.13.5" "-DCMake_SOURCE_DIR:PATH=/home/hiroto/@home_ws/src/washi_ex/cpp/cmake-3.13.5" "-DGIT_EXECUTABLE:STRING=/usr/bin/git" "-DHOME:STRING=/home/hiroto" "-P" "/home/hiroto/@home_ws/src/washi_ex/cpp/cmake-3.13.5/Tests/CMakeTests/CheckSourceTreeTest.cmake")

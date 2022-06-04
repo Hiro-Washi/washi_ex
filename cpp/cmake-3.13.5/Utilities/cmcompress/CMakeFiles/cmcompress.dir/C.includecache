@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/hiroto/@home_ws/src/washi_ex/cpp/cmake-3.13.5/Utilities/cmcompress/cmcompress.c
+cmcompress.h
+/home/hiroto/@home_ws/src/washi_ex/cpp/cmake-3.13.5/Utilities/cmcompress/cmcompress.h
+errno.h
+-
+string.h
+-
+
+/home/hiroto/@home_ws/src/washi_ex/cpp/cmake-3.13.5/Utilities/cmcompress/cmcompress.h
+stdio.h
+-
+
