@@ -1,9 +1,8 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
 import rospy
 from std_msgs.msg import String
-
 
 class eyesTestPub
     def __init__(self):
@@ -11,11 +10,6 @@ class eyesTestPub
         "self.eyes_reciever = rospy.Subscriber(''"
     
     def moveEyes(self
-
-
-
-
-
 
 class MotorController(object):
     def __init__(self):
