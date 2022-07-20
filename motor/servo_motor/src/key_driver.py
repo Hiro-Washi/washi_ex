@@ -5,9 +5,7 @@ import rospy
 from std_msgs.msg import String
 
 if __name__ == '__main__':
-    #KeysトピックにString型のメッセージを毎秒一回送る
     key_pub = rospy.Publisher('keys', String, queue_size=1)
-    #keyboard_driverノード作成
     rospy.init_node("keyboard_driver")
     rate = rospy.Rate(100)
 

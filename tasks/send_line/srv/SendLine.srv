@@ -1,0 +1,6 @@
+#req
+String to_name
+String message
+---
+#res
+bool result
