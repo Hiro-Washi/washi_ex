@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.0.2)
-project(roscpp_ex)
+project(rcj_20_master)
 
 ## Compile as C++11, supported in ROS Kinetic and newer
 # add_compile_options(-std=c++11)
@@ -8,9 +8,11 @@ project(roscpp_ex)
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
-  roscpp
+  rospy
+  smach
+  smash_ros
   std_msgs
-  message_generation
+  std_srvs
 )
 
 ## System dependencies are found with CMake's conventions
@@ -47,12 +49,11 @@ find_package(catkin REQUIRED COMPONENTS
 ##   * add every package in MSG_DEP_SET to generate_messages(DEPENDENCIES ...)
 
 ## Generate messages in the 'msg' folder
-add_message_files(
-  DIRECTORY
-  msg
-  FILES
-  adder.msg
-)
+# add_message_files(
+#   FILES
+#   Message1.msg
+#   Message2.msg
+# )
 
 ## Generate services in the 'srv' folder
 # add_service_files(
@@ -69,10 +70,10 @@ add_message_files(
 # )
 
 ## Generate added messages and services with any dependencies listed here
-generate_messages(
-  DEPENDENCIES
-  std_msgs
-)
+# generate_messages(
+#   DEPENDENCIES
+#   std_msgs
+# )
 
 ################################################
 ## Declare ROS dynamic reconfigure parameters ##
@@ -105,8 +106,8 @@ generate_messages(
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
 #  INCLUDE_DIRS include
-#  LIBRARIES roscpp_ex
-#  CATKIN_DEPENDS roscpp std_msgs
+#  LIBRARIES rcj_20_master
+#  CATKIN_DEPENDS rospy smach smash_ros std_msgs std_srvs
 #  DEPENDS system_lib
 )
 
@@ -123,7 +124,7 @@ include_directories(
 
 ## Declare a C++ library
 # add_library(${PROJECT_NAME}
-#   src/${PROJECT_NAME}/roscpp_ex.cpp
+#   src/${PROJECT_NAME}/rcj_20_master.cpp
 # )
 
 ## Add cmake target dependencies of the library
@@ -134,7 +135,7 @@ include_directories(
 ## Declare a C++ executable
 ## With catkin_make all packages are built within a single CMake context
 ## The recommended prefix ensures that target names across packages don't collide
-# add_executable(${PROJECT_NAME}_node src/roscpp_ex_node.cpp)
+# add_executable(${PROJECT_NAME}_node src/rcj_20_master_node.cpp)
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
@@ -198,15 +199,10 @@ include_directories(
 #############
 
 ## Add gtest based cpp test target and link libraries
-# catkin_add_gtest(${PROJECT_NAME}-test test/test_roscpp_ex.cpp)
+# catkin_add_gtest(${PROJECT_NAME}-test test/test_rcj_20_master.cpp)
 # if(TARGET ${PROJECT_NAME}-test)
 #   target_link_libraries(${PROJECT_NAME}-test ${PROJECT_NAME})
 # endif()
 
 ## Add folders to be run by python nosetests
 # catkin_add_nosetests(test)
-
-add_executable(sub1 src/sub1.cpp)
-target_link_libraries(sub1 ${catkin_LIBRARIES})
-add_executable(pub1 src/pub1.cpp)
-target_link_libraries(pub1 ${catkin_LIBRARIES})
