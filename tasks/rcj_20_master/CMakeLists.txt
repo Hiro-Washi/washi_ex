@@ -10,7 +10,7 @@ project(rcj_20_master)
 find_package(catkin REQUIRED COMPONENTS
   rospy
   smach
-  smash_ros
+  smach_ros
   std_msgs
   std_srvs
 )
